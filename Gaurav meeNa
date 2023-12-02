@@ -1,0 +1,13 @@
+BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+String line = null;
+String prompt = "js >> ";
+for (System.out.print(prompt) ;
+     (line = in.readLine()) != null ; System.out.print(prompt) ) {
+    line = line.trim();
+    if ( line.isEmpty() ) continue;
+    try { engine.eval(line); }
+    catch(Exception ex) {
+        System.err.println("Error: " + ex.getMessage());
+    }
+}
+
